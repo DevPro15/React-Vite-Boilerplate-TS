@@ -59,7 +59,7 @@ const Hero = () => {
             Download the boilerplate and start building your project today.
           </p>
           <div className="flex justify-center mt-8 sm:mt-0 relative sm:fixed sm:right-10 sm:top-9">
-            <Buttonads>
+            <Button>
               <Link
                 to="https://github.com/DevPro15/React-Vite-Boilerplate-TS"
                 rel="noreferrer"
@@ -69,7 +69,7 @@ const Hero = () => {
               >
                 Github
               </Link>
-            </Buttonads>
+            </Button>
           </div>
         </div>
 
