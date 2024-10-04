@@ -3,6 +3,7 @@ import {
   FileIcon,
   FolderIcon,
   GraphIcon,
+  HuskyLogoIcon,
   LayoutIcon,
   PieIcon,
 } from "../assets";
@@ -34,7 +35,15 @@ const features = [
       "Custom hooks encapsulate reusable logic, making the code more modular and easier to maintain by separating concerns and avoiding repetition across components.",
   },
   {
-    icon: <FolderIcon />,
+    icon: (
+      <img
+        src={HuskyLogoIcon}
+        alt="husky"
+        width={47}
+        height={47}
+        className="mt-8"
+      />
+    ),
     title: "Husky",
     description:
       "Husky ensures code quality by managing pre-commit and pre-push Git hooks, automating tasks like linting and testing to maintain consistency and prevent errors before changes are committed.",
@@ -73,11 +82,11 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-[30px]">
+        <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-[30px] mb-2">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`md:p-8 lg:p-8 ${
+              className={`md:p-8 lg:p-[27px] flex flex-col justify-center items-center ${
                 index > 0 && index % 3 !== 0
                   ? "md:border-l md:border-gray-200"
                   : ""

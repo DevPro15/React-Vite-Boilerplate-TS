@@ -5,5 +5,11 @@ import { ReactComponent as GraphIcon } from "../assets/svgs/hero/graph.svg";
 import { ReactComponent as LayoutIcon } from "../assets/svgs/hero/layout.svg";
 import { ReactComponent as PieIcon } from "../assets/svgs/hero/pie.svg";
 
+// PNG IMPORT
+import HuskyLogoIcon from "../assets/png/hero/huskyLogo.png";
+
 // SVGS EXPORT
 export { FolderIcon, FileIcon, GraphIcon, LayoutIcon, PieIcon };
+
+// PNG EXPORT
+export { HuskyLogoIcon };
