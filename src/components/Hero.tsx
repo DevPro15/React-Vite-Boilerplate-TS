@@ -8,6 +8,45 @@ import {
 } from "../assets";
 import Button from "./UI/Button";
 
+const features = [
+  {
+    icon: <FolderIcon />,
+    title: "Folder Structure",
+    description:
+      "Our Vite + TypeScript boilerplate is cleanly structured, with dedicated directories for components, utilities, and assets. Each feature is modular, ensuring easy navigation and scalability.",
+  },
+  {
+    icon: <GraphIcon />,
+    title: "Protected Routes",
+    description:
+      "Ensure only authenticated users can access certain pages, enhancing security and user experience by redirecting unauthorized users to login.",
+  },
+  {
+    icon: <LayoutIcon />,
+    title: "Layout",
+    description:
+      "Organizes the page structure, ensuring consistent design and easy navigation across different views while keeping shared elements like headers and footers in place.",
+  },
+  {
+    icon: <FileIcon />,
+    title: "Hooks",
+    description:
+      "Custom hooks encapsulate reusable logic, making the code more modular and easier to maintain by separating concerns and avoiding repetition across components.",
+  },
+  {
+    icon: <FolderIcon />,
+    title: "Husky",
+    description:
+      "Husky ensures code quality by managing pre-commit and pre-push Git hooks, automating tasks like linting and testing to maintain consistency and prevent errors before changes are committed.",
+  },
+  {
+    icon: <PieIcon />,
+    title: "Svgr",
+    description:
+      "SVGR transforms SVGs into React components, allowing for easy manipulation and integration within the application while maintaining scalability and performance.",
+  },
+];
+
 const Hero = () => {
   return (
     <section className="py-6 bg-white">
@@ -20,7 +59,7 @@ const Hero = () => {
             Download the boilerplate and start building your project today.
           </p>
           <div className="flex justify-center mt-8 sm:mt-0 relative sm:fixed sm:right-10 sm:top-9">
-            <Button>
+            <Buttonads>
               <Link
                 to="https://github.com/DevPro15/React-Vite-Boilerplate-TS"
                 rel="noreferrer"
@@ -30,81 +69,29 @@ const Hero = () => {
               >
                 Github
               </Link>
-            </Button>
+            </Buttonads>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-10">
-          <div className="md:p-8 lg:p-5">
-            <FolderIcon />
-            <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
-              Folder Structure
-            </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
-              Our Vite + TypeScript boilerplate is cleanly structured, with
-              dedicated directories for components, utilities, and assets. Each
-              feature is modular, ensuring easy navigation and scalability.
-            </p>
-          </div>
-
-          <div className="md:p-8 lg:p-10 md:border-l md:border-gray-200">
-            <GraphIcon />
-            <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
-              Protected Routes
-            </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
-              Ensure only authenticated users can access certain pages,
-              enhancing security and user experience by redirecting unauthorized
-              users to login.
-            </p>
-          </div>
-
-          <div className="md:p-8 lg:p-10 md:border-l md:border-gray-200">
-            <LayoutIcon />
-            <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
-              Layout
-            </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
-              Organizes the page structure, ensuring consistent design and easy
-              navigation across different views while keeping shared elements
-              like headers and footers in place.
-            </p>
-          </div>
-
-          <div className="md:p-8 lg:p-10 md:border-t md:border-gray-200">
-            <FileIcon />
-            <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
-              Hooks
-            </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
-              Custom hooks encapsulate reusable logic, making the code more
-              modular and easier to maintain by separating concerns and avoiding
-              repetition across components.
-            </p>
-          </div>
-
-          <div className="md:p-8 lg:p-10 md:border-l md:border-gray-200 md:border-t">
-            <FolderIcon />
-            <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
-              Store
-            </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
-              Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-              proin faucibus nibh et sagittis a. Lacinia purus ac amet.
-            </p>
-          </div>
-
-          <div className="md:p-8 lg:p-10 md:border-l md:border-gray-200 md:border-t">
-            <PieIcon />
-            <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
-              Svgr
-            </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
-              SVGR transforms SVGs into React components, allowing for easy
-              manipulation and integration within the application while
-              maintaining scalability and performance.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-[30px]">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className={`md:p-8 lg:p-8 ${
+                index > 0 && index % 3 !== 0
+                  ? "md:border-l md:border-gray-200"
+                  : ""
+              } ${index >= 3 ? "md:border-t md:border-gray-200" : ""}`}
+            >
+              {feature.icon}
+              <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
+                {feature.title}
+              </h3>
+              <p className="mt-5 text-base text-gray-600 font-pj">
+                {feature.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
