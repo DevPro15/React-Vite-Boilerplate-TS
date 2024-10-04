@@ -1,50 +1,88 @@
-# React + TypeScript + Vite
+# React-Vite + TS + Tailwind Boilerplate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a Vite + TypeScript boilerplate designed to help you build scalable, modular, and high-performance web applications. It follows a clean folder structure, includes essential features like Protected Routes, reusable layouts, and custom hooks, and integrates tools like SVGR and Husky to ensure efficient development and code quality..
 
-Currently, two official plugins are available:
+![React-Vite-Boilerplate-TS](https://github.com/user-attachments/assets/296dc727-ffbd-4cf5-9cb2-33d400480a18)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Vite + TypeScript**: Lightning-fast build tool with TypeScript support for better development experience and type safety.
+- **Protected Routes**: Ensures only authenticated users can access certain pages, enhancing security and user experience by redirecting unauthorized users to login.
+- **Layout Management**: Organizes page structure to ensure consistent design, with shared elements like headers and footers across views.
+- **Custom Hooks**: Encapsulates reusable logic for modular and maintainable code.
+- **SVGR**: Enables easy manipulation and integration of SVG files as React components.
+- **Husky Integration**: Automates Git hooks (like pre-commit and pre-push) to enforce code quality through linting, testing, and other tasks before commits.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Folder Structure
 
-- Configure the top-level `parserOptions` property like this:
+The project is organized with a clean folder structure:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+├── src/
+│   ├── assets/            # Static files and media (images, fonts, etc.)
+│   ├── components/        # Reusable UI components
+│   ├── hooks/             # Custom hooks for encapsulating logic
+│   ├── pages/             # Page components for routing
+│   ├── routes/            # routing handling
+│   ├── store/             # The store directory contain files relating to global data stores
+│   ├── utils/             # Utility functions
+│   ├── styles/            # Global Css
+│   ├── App.tsx            # Main application entry point
+│   ├── main.tsx           # Main render file
+│   ├── svg.d.tsx          # Allows TypeScript to recognize SVG files as React components
+│   └── vite-env.d.ts      # Provides type definitions for Vite's environment
+
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Getting Started
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Prerequisites
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/DevPro15/React-Vite-Boilerplate-TS.git
+
+2. Navigate to the project folder:
+
+   ```bash
+   cd React-Vite-Boilerplate-TS
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+
+
+### Building for Production
+
+1. To create a production build, run:
+
+   ```bash
+   npm run build
+
+### Linting and Husky
+
+This project uses ESLint and Husky for linting and Git hooks. Husky is configured to run lint checks before committing any code.
+
+1. To manually lint your code:
+
+   ```bash
+   npm run lint
+
+### License
+
+This project is licensed under the MIT License.
+
+---
+
+This README provides an overview of your project’s features, folder structure, and setup instructions. Let me know if you'd like to customize it further!
+
+
